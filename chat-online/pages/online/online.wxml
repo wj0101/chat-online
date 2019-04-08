@@ -1,0 +1,73 @@
+<view>
+  <view class='content'>
+    <view class='scroll'>
+        <scroll-view scroll-y="true" class="history" scroll-top="{{scrollTop}}">
+          <block wx:for="{{messageList}}" wx:key>
+            <!-- 自己的消息開始 -->
+            <view class='my-message' wx:if="{{item.nickName == userInfo.nickName}}">
+              <!-- 自己的用戶信息開始 -->
+              <view class='user-info fl-right'>
+                  <text class="name">{{ item.nickName }}</text>
+                  <image class='imgs' src="{{userInfo.avatarUrl}}"></image>
+              </view>
+              <!-- 自己的用戶信息結束 -->
+              <view class='contect fl-right'>
+                <!-- 自己的聊天內容開始 -->
+                <block wx:if="{{item.type=='text'}}">
+                  <view class='txt-content mine-color'>{{item.content}}</view>
+                </block>
+                <block wx:if="{{item.type=='image'}}">
+                  <image class="selectImg" src="{{itemName}}" data-src="{{itemName}}" lazy-load="true" mode="widthFix" bindtap="previewImg" wx:for="{{item.images}}"  wx:for-item="itemName"></image>
+                </block>
+                <!-- 自己的聊天內容結束 -->
+              </view>
+            </view>
+            <!-- 自己的消息結束 -->
+
+            <!-- 對方的消息開始 -->
+            <view class='my-message' wx:else>
+              <!-- 對方的用戶信息開始 -->
+              <view class='user-info other-left'>
+                  <image class='imgs' src="{{userInfo.avatarUrl}}"></image>
+                  <text class="name">移民</text>
+              </view>
+              <!-- 對方的用戶信息結束 -->
+              <view class='contect other-left'>
+                <!-- 對方的聊天內容開始 -->
+                <block wx:if="{{item.type=='text'}}">
+                  <view class='txt-content other-color'>{{item.content}}</view>
+                </block>
+                <block wx:if="{{item.type=='image'}}">
+                  <image class="selectImg" src="{{item.images}}" data-src="{{item.images}}" lazy-load="true"></image>
+                </block>
+                <!-- 對方的聊天內容結束 -->
+              </view>
+            </view>
+            <!-- 對方的消息結束 -->
+          </block>
+        </scroll-view>
+    </view>
+  </view>
+  <view id="flag"></view>
+  <view class='text-input' animation="{{animationData}}">
+    <view class='top-input'>
+      <view>
+       <icon class="iconfont iconshengyin"></icon>
+      </view>
+      <view class='entry'>
+        <input type="text" placeholder="请输入内容" value="{{message}}"  confirm-type="send" class='text' bindconfirm="sendMessage" confirm-hold='true' cursor-spacing='10'/>
+      </view>
+      <view class='auxiliary' bindtap='showAlbum'>
+        <icon class="iconfont iconadd_circle"></icon>
+      </view>
+    </view>
+    <view class='increased'>
+      <view class='border' >
+        <icon class="iconfont icontupian" bindtap='chooseImage' data-types="picture"></icon>
+      </view>
+      <view class='border'>
+        <icon class="iconfont iconpaishe_A_Facet"  bindtap='chooseImage' data-types="camera"></icon>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,127 @@
+@import "../../css/icons.wxss";
+
+page{
+  background: #ededed;
+  height: 100%;
+}
+
+.text-input{
+  position: fixed;
+  bottom: -150rpx;
+  width: 100%;
+  padding-top: 14rpx;
+  background: #f6f6f6;
+  border-top: 1px solid #eaeaea
+}
+.top-input{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.text-input .text{
+  background:#fff;
+  flex: 0 0 70%;
+  height: 70rpx;
+  border-radius: 10rpx;
+  padding:0 10rpx
+}
+
+.history {
+  height: 100%;
+  margin-top: 15px;
+  margin-bottom: 100rpx;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.my-message{
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+  margin: 20rpx;
+}
+.user-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10rpx 0;
+}
+.user-info .name{
+  padding: 10rpx;
+}
+.fl-right{
+  text-align: right;
+  margin-left: auto;
+}
+.other-left{
+  text-align: left;
+  margin-right: auto;
+}
+.imgs {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.txt-content{
+  max-width: 500rpx;
+  display: inline-block;
+  border-radius: 6rpx;
+  line-height: 60rpx;
+  padding: 5rpx 20rpx;
+  margin: 0 10rpx;
+  margin-right: 50rpx;
+}
+.other-color{
+  background-color: #fff;
+}
+.mine-color{
+  background-color: #95d4ff;
+  margin-left: 50rpx;
+}
+.iconshengyin{
+  font-size: 50rpx
+}
+.iconadd_circle{
+  font-size: 50rpx
+}
+.entry{
+  flex: 0 0 70%
+}
+
+.increased{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #f6f6f6;
+}
+.icontupian{
+  font-size: 70rpx;
+}
+.iconpaishe_A_Facet{
+  font-size: 70rpx;
+}
+.border{
+  border: 1px solid #ddd;
+  margin: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+#flag{
+margin-bottom:100rpx;
+height:30rpx;
+}
+
+.selectImg{
+  display: flex;
+  width: 250rpx;
+  height: 250rpx;
+  flex: 1;
+  margin-right: 50rpx;
+  padding: 10rpx;
+}
+.iconfont{
+  padding: 20rpx 30rpx;
+}
