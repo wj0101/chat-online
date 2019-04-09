@@ -79,8 +79,9 @@ io.on('connection', (socket) => {
             }else{
                 let total = docs[0].comments.length
                 let pageNo =Math.ceil( total / data.pageSize)
-                let startSize = (pageNo - data.nowPage) * data.pageSize
-                Message.find({openid: data.openid},{"comments":{$slice:[startSize,data.pageSize]}})
+                let startSize = total - (data.nowPage * data.pageSize)
+                let startIndex = startSize > 0 ? startSize : 0
+                Message.find({openid: data.openid},{"comments":{$slice:[startIndex,data.pageSize]}})
                     .exec((err,docs) => {
                         socket.emit("getChatListDone",docs);
                         console.log(data.nickName+"  正在调取聊天记录");
